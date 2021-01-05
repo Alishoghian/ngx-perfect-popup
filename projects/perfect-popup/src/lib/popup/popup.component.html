@@ -1,5 +1,6 @@
 <div class="perfect-popup {{data?.config?.theme ? data?.config?.theme : data?.config?.styleClass}}" [id]="data.id"
-    #PerfectPopup (mousedown)="$event.stopPropagation();changeZIndex(PerfectPopup)">
+    #PerfectPopup (mousedown)="$event.stopPropagation();changeZIndex(PerfectPopup)" [ngStyle]="{'width': data?.config?.width ? data?.config?.width+'px' : 'fit-contnet',
+                'height': data?.config?.height ? data?.config?.height+'px' : 'fit-contnet'}">
     <div class="popup-body" dir="ltr" #body>
         <div class="header" [dir]="dir|async" [ngStyle]="{'cursor': fullScreen || !data.config.dragable?'unset':'move'}"
             Move [element]="PerfectPopup" [fullScreen]="fullScreen" [dragable]="data.config.dragable">

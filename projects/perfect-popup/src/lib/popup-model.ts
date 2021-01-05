@@ -9,7 +9,7 @@ export interface PopupModel {
     resizable: boolean | "width" | "height";
     dragable: boolean | "x" | "y";
     beforeCloseCallBack: boolean;
-    toolbar: boolean;
+    // toolbar: boolean;
     toolbarAction: boolean;
     multiPopup: boolean;
     overlayBlur?: boolean;
@@ -17,4 +17,6 @@ export interface PopupModel {
     data?: any;
     headerTitle?: string;
     icon?: string;
+    width?: number;
+    height?: number;
 }
