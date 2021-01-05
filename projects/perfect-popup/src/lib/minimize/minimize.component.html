@@ -1,0 +1,30 @@
+<div class="minimize-list" #mini [dir]="dir|async">
+    <div class="list" *ngFor="let item of list|forKey">
+        <img [src]="list[item][0].icon" width="45px" height="45px" alt="" (click)="maximaze(item)">
+        <div class="item" [ngStyle]="{'top': '-'+(30*list[item].length+4)+'px'}" *ngIf="checkArrayLength(item)">
+            <div class="popup" *ngFor="let popup of list[item]">
+                <span (click)="maximazePopup(item,popup)">{{popup.title ? popup.title : 'sample Popup'}}</span>
+                <button (click)="close(item,popup)">
+                    <svg class="close" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="20px"
+                        viewBox="0 0 294.843 294.843" xml:space="preserve">
+                        <g id="g10">
+                            <path
+                                d="m 148.74613,2.6502391 c -79.583105,0 -144.3290648,65.0431789 -144.3290648,144.9916109 0,79.94844 64.7459598,144.99162 144.3290648,144.99162 37.48399,0 73.00307,-14.36825 100.01637,-40.45811 2.33889,-2.25816 4.3889,-9.18694 1.04691,-12.78492 -3.13028,-4.55718 -10.84862,-5.98168 -13.1885,-3.72254 -27.15592,22.24761 -53.44144,35.16331 -87.8738,35.16331 C 85.358786,269.06538 26.51244,206.50023 28.165383,147.64185 29.991629,82.612455 86.905203,24.872659 148.74613,26.452488 c 63.36706,1.618816 121.68502,53.491072 120.58075,121.189362 -0.27016,16.56226 -2.98799,32.72469 -8.88075,48.03024 -1.16994,3.04006 5.89213,8.68999 8.91831,9.86628 3.02714,1.17333 12.86902,-2.56856 14.03993,-5.60861 6.41752,-16.66971 9.6718,-34.26193 9.6718,-52.28889 0,-79.947452 -64.74596,-144.9906309 -144.33004,-144.9906309 z"
+                                id="path2" inkscape:connector-curvature="0" style="stroke-width:0.98127103"
+                                sodipodi:nodetypes="sssccccssscccss" />
+                            <path
+                                d="m 175.619,162.134 c -2.37,-2.319 -10.168,-0.277 -12.485,2.09 -2.318,2.368 -6.277,8.167 -3.91,10.485 l 47.236,46.236 c 3.47033,0.69251 9.98978,0.37934 12.485,-2.091 2.318,-2.368 6.277,-8.167 3.91,-10.485 z"
+                                id="path4" inkscape:connector-curvature="0" sodipodi:nodetypes="ccccccc" />
+                            <path
+                                d="m 117.178,131.663 c 2.62315,2.21172 10.23531,0.18096 12.486,-2 2.343,-2.343 4.343,-10.142 2,-12.485 L 88.428,73.942 C 86.085,71.599 78.61628,72.703266 76.27428,75.046266 73.93128,77.389266 69.6,84.084 71.943,86.427 Z"
+                                id="path6" inkscape:connector-curvature="0" sodipodi:nodetypes="ccssccc" />
+                            <path
+                                d="m 214.9,79.942 c -2.343,-2.343 -10.143,-4.343 -12.485,-2 L 77.942,202.415 c -2.343,2.343 -0.343,10.142 2,12.485 2.655653,1.77054 10.269487,3.79844 12.486,2 L 216.9,92.428 c 2.343,-2.344 0.343,-10.142 -2,-12.486 z"
+                                id="path8" inkscape:connector-curvature="0" sodipodi:nodetypes="ccscccc" />
+                        </g>
+                    </svg></button>
+            </div>
+        </div>
+    </div>
+</div>

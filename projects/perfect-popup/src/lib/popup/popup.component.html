@@ -1,0 +1,160 @@
+<div class="perfect-popup {{data?.config?.theme ? data?.config?.theme : data?.config?.styleClass}}" [id]="data.id"
+    #PerfectPopup (mousedown)="$event.stopPropagation();changeZIndex(PerfectPopup)">
+    <div class="popup-body" dir="ltr" #body>
+        <div class="header" [dir]="dir|async" [ngStyle]="{'cursor': fullScreen || !data.config.dragable?'unset':'move'}"
+            Move [element]="PerfectPopup" [fullScreen]="fullScreen" [dragable]="data.config.dragable">
+            <div class="title">
+                <div class="logo" [ngStyle]="{'background-image': data.config?.icon ? 'url('+data.config?.icon+')':''}">
+                </div>
+                <strong>{{data.config?.headerTitle ? data.config?.headerTitle : 'Sample Popup'}}</strong>
+            </div>
+            <div class="action" *ngIf="data.config.toolbarAction">
+                <button (click)="$event.stopPropagation(); minimaze()"><span class="mini"></span></button>
+                <button *ngIf="!fullScreen" (click)="$event.stopPropagation(); maximaze()">
+                    <svg class="full-screen" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg"
+                        width="20px" height="20px" viewBox="0 0 30 30">
+                        <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1"
+                            transform="translate(0,-267)">
+                            <g id="Responsive-scales" transform="matrix(0.46094998,0,0,0.4424979,0.22690782,267.65016)">
+                                <path inkscape:connector-curvature="0"
+                                    d="M 23.459694,37.497805 12.371616,49.312177 v -5.530236 c 0,-0.669366 -0.897989,-1.211084 -1.533075,-1.211084 -0.635085,0 -1.3585216,0.712212 -1.3585216,1.381578 v 9.687453 c 0,0.669485 0.5142625,1.192386 1.1490596,1.211082 l 9.2623,0.27279 c 0.634796,0.0187 1.567983,-0.916683 1.567983,-1.586168 0,-0.669367 -0.723566,-1.573619 -1.358521,-1.586168 l -5.17613,-0.102297 11.695925,-11.274784 z"
+                                    id="path12" style="stroke-width:1.17966366" sodipodi:nodetypes="ccssssssssccc" />
+                                <path inkscape:connector-curvature="0"
+                                    d="M 57.304199,0 H 16.7885 c -3.2939,0 -5.9746,2.6807001 -5.9746,5.9747 v 6.509825 H 6.6947999 c -3.2939,0 -5.9735999,1.484838 -5.9735999,4.778738 V 58.0254 C 0.7212,61.319401 3.4008999,64 6.6947999,64 H 47.211398 c 3.293899,0 5.974601,-2.680599 5.974601,-5.974602 v -2.676697 h 4.118199 c 3.293899,0 5.974601,-2.680702 5.974601,-5.974601 V 5.9747 C 63.278801,2.6807001 60.598099,0 57.304199,0 Z m -9.562174,56.829535 c 0,2.191403 0.512785,1.582876 -1.678618,1.582876 H 7.8427914 c -2.1914001,0 -1.6776169,0.608527 -1.6776169,-1.582876 V 19.654988 c 0,-2.1914 -0.5137831,-1.582874 1.6776169,-1.582874 H 46.063406 c 2.191402,0 1.61098,-0.607392 1.678617,1.582874 v 37.174547 z m 10.0928,-8.651298 c 0,1.710918 -1.433726,1.582875 -2.826609,1.582875 H 53.186001 V 18.459125 c 0,-3.2939 -2.682965,-5.84743 -5.974602,-5.9746 H 16.257876 V 8.3664251 c 0,-1.9778532 1.437769,-1.7515118 3.349353,-1.7431351 l 36.54898,0.1601601 c 1.625276,0.00712 1.626269,0.9633978 1.678618,2.7788375 0.770754,5.0954854 -0.153533,34.8254924 -2e-6,38.6159494 z"
+                                    id="path14" sodipodi:nodetypes="ssscsssssscsssscssssssscccscsscssscc" />
+                                <path inkscape:connector-curvature="0"
+                                    d="M 31.395334,35.02755 42.455983,24.527245 v 4.915129 c 0,0.594916 0.895767,1.076381 1.529281,1.076381 0.633514,0 1.355163,-0.632996 1.355163,-1.227912 v -8.609957 c 0,-0.59502 -0.512991,-1.05976 -1.146217,-1.076378 L 34.954822,19.36206 c -0.633225,-0.01662 -1.564106,0.814724 -1.564106,1.409744 0,0.594916 0.721778,1.398592 1.355162,1.409745 l 5.163325,0.09092 -11.666993,10.020734 z"
+                                    id="path12-9" style="stroke-width:1.11074924" sodipodi:nodetypes="ccssssssssccc" />
+                            </g>
+                            <g id="g17" transform="matrix(0.46094998,0,0,0.4424979,0.22690782,267.65016)" />
+                            <g id="g19" transform="matrix(0.46094998,0,0,0.4424979,0.22690782,267.65016)" />
+                            <g id="g21" transform="matrix(0.46094998,0,0,0.4424979,0.22690782,267.65016)" />
+                            <g id="g23" transform="matrix(0.46094998,0,0,0.4424979,0.22690782,267.65016)" />
+                            <g id="g25" transform="matrix(0.46094998,0,0,0.4424979,0.22690782,267.65016)" />
+                            <g id="g27" transform="matrix(0.46094998,0,0,0.4424979,0.22690782,267.65016)" />
+                            <g id="g29" transform="matrix(0.46094998,0,0,0.4424979,0.22690782,267.65016)" />
+                            <g id="g31" transform="matrix(0.46094998,0,0,0.4424979,0.22690782,267.65016)" />
+                            <g id="g33" transform="matrix(0.46094998,0,0,0.4424979,0.22690782,267.65016)" />
+                            <g id="g35" transform="matrix(0.46094998,0,0,0.4424979,0.22690782,267.65016)" />
+                            <g id="g37" transform="matrix(0.46094998,0,0,0.4424979,0.22690782,267.65016)" />
+                            <g id="g39" transform="matrix(0.46094998,0,0,0.4424979,0.22690782,267.65016)" />
+                            <g id="g41" transform="matrix(0.46094998,0,0,0.4424979,0.22690782,267.65016)" />
+                            <g id="g43" transform="matrix(0.46094998,0,0,0.4424979,0.22690782,267.65016)" />
+                            <g id="g45" transform="matrix(0.46094998,0,0,0.4424979,0.22690782,267.65016)" />
+                        </g>
+                    </svg>
+                </button>
+                <button *ngIf="fullScreen" (click)="$event.stopPropagation(); exitMaximaze()">
+                    <svg class="exit-full-screen" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                        xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="20px"
+                        height="20px" viewBox="0 0 30 30">
+                        <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1"
+                            transform="translate(0,-267)">
+                            <g id="Responsive-scales" transform="matrix(0.46094998,0,0,0.4424979,0.22690782,267.65016)">
+                                <path inkscape:connector-curvature="0"
+                                    d="M 44.594736,14.764268 33.084691,27.843782 V 21.72134 c 0,-0.741045 -0.932162,-1.340773 -1.591417,-1.340773 -0.659254,0 -1.410222,0.788479 -1.410222,1.529524 v 10.724835 c 0,0.741177 0.533833,1.320073 1.192788,1.340771 l 9.614785,0.302001 c 0.658954,0.0207 1.627655,-1.014845 1.627655,-1.756022 0,-0.741046 -0.751102,-1.74213 -1.410221,-1.756023 L 35.734947,30.652403 47.87597,18.170259 Z"
+                                    id="path12" style="stroke-width:1.2646172" sodipodi:nodetypes="ccssssssssccc" />
+                                <path inkscape:connector-curvature="0"
+                                    d="M 57.304199,0 H 16.7885 c -3.2939,0 -5.9746,2.6807001 -5.9746,5.9747 v 4.1181 H 6.6947999 c -3.2939,0 -5.9735999,2.6807 -5.9735999,5.9746 v 41.958 C 0.7212,61.319401 3.4008999,64 6.6947999,64 H 47.211398 c 3.293899,0 5.974601,-2.680599 5.974601,-5.974602 v -2.676697 h 4.118199 c 3.293899,0 5.974601,-2.680702 5.974601,-5.974601 V 5.9747 C 63.278801,2.6807001 60.598099,0 57.304199,0 Z m -8.414182,58.025398 c 0,2.191403 0.512785,1.582876 -1.678618,1.582876 H 6.6947999 c -2.1914001,0 -1.6776169,0.608527 -1.6776169,-1.582876 V 16.0674 c 0,-2.1914 -0.5137831,-1.582874 1.6776169,-1.582874 H 47.211398 c 2.191402,0 1.618684,-0.607635 1.678617,1.582874 v 41.957998 z m 10.0928,-8.651298 c 0,2.191398 0.512785,1.582875 -1.678618,1.582875 H 53.186001 V 16.0674 c 0,-3.2939 -2.680702,-5.9746 -5.974602,-5.9746 H 15.109884 V 5.9747 c 0,-2.1914001 -0.511853,-0.3205731 1.678616,-0.3871124 L 56.156209,4.391725 c 2.190472,-0.066539 2.768666,-0.6075936 2.82661,1.582975 v 43.3994 z"
+                                    id="path14" sodipodi:nodetypes="ssscsssssscsssscssssssscccscsscsssscc" />
+                                <path inkscape:connector-curvature="0"
+                                    d="M 10.548719,56.624619 21.843794,43.948268 v 5.933723 c 0,0.718204 0.914752,1.299446 1.561693,1.299446 0.646942,0 1.383885,-0.764175 1.383885,-1.482379 V 39.304805 c 0,-0.718331 -0.523863,-1.279382 -1.17051,-1.299443 L 14.183649,37.71267 c -0.646646,-0.02006 -1.597256,0.983563 -1.597256,1.701894 0,0.718204 0.737075,1.688431 1.383883,1.701895 l 5.27276,0.109758 -11.914268,12.097395 z"
+                                    id="path12-9" style="stroke-width:1.23329353" sodipodi:nodetypes="ccssssssssccc" />
+                            </g>
+                            <g id="g17" transform="matrix(0.46094998,0,0,0.4424979,0.22690782,267.65016)" />
+                            <g id="g19" transform="matrix(0.46094998,0,0,0.4424979,0.22690782,267.65016)" />
+                            <g id="g21" transform="matrix(0.46094998,0,0,0.4424979,0.22690782,267.65016)" />
+                            <g id="g23" transform="matrix(0.46094998,0,0,0.4424979,0.22690782,267.65016)" />
+                            <g id="g25" transform="matrix(0.46094998,0,0,0.4424979,0.22690782,267.65016)" />
+                            <g id="g27" transform="matrix(0.46094998,0,0,0.4424979,0.22690782,267.65016)" />
+                            <g id="g29" transform="matrix(0.46094998,0,0,0.4424979,0.22690782,267.65016)" />
+                            <g id="g31" transform="matrix(0.46094998,0,0,0.4424979,0.22690782,267.65016)" />
+                            <g id="g33" transform="matrix(0.46094998,0,0,0.4424979,0.22690782,267.65016)" />
+                            <g id="g35" transform="matrix(0.46094998,0,0,0.4424979,0.22690782,267.65016)" />
+                            <g id="g37" transform="matrix(0.46094998,0,0,0.4424979,0.22690782,267.65016)" />
+                            <g id="g39" transform="matrix(0.46094998,0,0,0.4424979,0.22690782,267.65016)" />
+                            <g id="g41" transform="matrix(0.46094998,0,0,0.4424979,0.22690782,267.65016)" />
+                            <g id="g43" transform="matrix(0.46094998,0,0,0.4424979,0.22690782,267.65016)" />
+                            <g id="g45" transform="matrix(0.46094998,0,0,0.4424979,0.22690782,267.65016)" />
+                        </g>
+                    </svg>
+                </button>
+                <button (click)="$event.stopPropagation(); close()">
+                    <svg class="close" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="20px"
+                        viewBox="0 0 294.843 294.843" xml:space="preserve">
+                        <g id="g10">
+                            <path
+                                d="m 148.74613,2.6502391 c -79.583105,0 -144.3290648,65.0431789 -144.3290648,144.9916109 0,79.94844 64.7459598,144.99162 144.3290648,144.99162 37.48399,0 73.00307,-14.36825 100.01637,-40.45811 2.33889,-2.25816 4.3889,-9.18694 1.04691,-12.78492 -3.13028,-4.55718 -10.84862,-5.98168 -13.1885,-3.72254 -27.15592,22.24761 -53.44144,35.16331 -87.8738,35.16331 C 85.358786,269.06538 26.51244,206.50023 28.165383,147.64185 29.991629,82.612455 86.905203,24.872659 148.74613,26.452488 c 63.36706,1.618816 121.68502,53.491072 120.58075,121.189362 -0.27016,16.56226 -2.98799,32.72469 -8.88075,48.03024 -1.16994,3.04006 5.89213,8.68999 8.91831,9.86628 3.02714,1.17333 12.86902,-2.56856 14.03993,-5.60861 6.41752,-16.66971 9.6718,-34.26193 9.6718,-52.28889 0,-79.947452 -64.74596,-144.9906309 -144.33004,-144.9906309 z"
+                                id="path2" inkscape:connector-curvature="0" style="stroke-width:0.98127103"
+                                sodipodi:nodetypes="sssccccssscccss" />
+                            <path
+                                d="m 175.619,162.134 c -2.37,-2.319 -10.168,-0.277 -12.485,2.09 -2.318,2.368 -6.277,8.167 -3.91,10.485 l 47.236,46.236 c 3.47033,0.69251 9.98978,0.37934 12.485,-2.091 2.318,-2.368 6.277,-8.167 3.91,-10.485 z"
+                                id="path4" inkscape:connector-curvature="0" sodipodi:nodetypes="ccccccc" />
+                            <path
+                                d="m 117.178,131.663 c 2.62315,2.21172 10.23531,0.18096 12.486,-2 2.343,-2.343 4.343,-10.142 2,-12.485 L 88.428,73.942 C 86.085,71.599 78.61628,72.703266 76.27428,75.046266 73.93128,77.389266 69.6,84.084 71.943,86.427 Z"
+                                id="path6" inkscape:connector-curvature="0" sodipodi:nodetypes="ccssccc" />
+                            <path
+                                d="m 214.9,79.942 c -2.343,-2.343 -10.143,-4.343 -12.485,-2 L 77.942,202.415 c -2.343,2.343 -0.343,10.142 2,12.485 2.655653,1.77054 10.269487,3.79844 12.486,2 L 216.9,92.428 c 2.343,-2.344 0.343,-10.142 -2,-12.486 z"
+                                id="path8" inkscape:connector-curvature="0" sodipodi:nodetypes="ccscccc" />
+                        </g>
+                    </svg></button>
+            </div>
+        </div>
+        <div class="content" [dir]="dir|async">
+            <ng-template loadComp [comp]="data.component" [data]="{data:data.config.data,id:data.id}"></ng-template>
+        </div>
+        <div class="right resize" *ngIf="!fullScreen && data.config.resizable" resize [element]="PerfectPopup"
+            [resizeType]="'xr'" [resizeControl]="resizeControl"></div>
+        <div class="left resize" *ngIf="!fullScreen && data.config.resizable" resize [element]="PerfectPopup"
+            [resizeType]="'xl'" [resizeControl]="resizeControl"></div>
+        <div class="top resize" *ngIf="!fullScreen && data.config.resizable" resize [element]="PerfectPopup"
+            [resizeType]="'yt'" [resizeControl]="resizeControl"></div>
+        <div class="bottom resize" *ngIf="!fullScreen && data.config.resizable" resize [element]="PerfectPopup"
+            [resizeType]="'yb'" [resizeControl]="resizeControl"></div>
+        <div class="right-top resize" *ngIf="!fullScreen && data.config.resizable" resize [element]="PerfectPopup"
+            [resizeType]="'xyrt'" [resizeControl]="resizeControl"></div>
+        <div class="right-bottom resize" *ngIf="!fullScreen && data.config.resizable" resize [element]="PerfectPopup"
+            [resizeType]="'xyrb'" [resizeControl]="resizeControl">
+        </div>
+        <div class="left-top resize" *ngIf="!fullScreen && data.config.resizable" resize [element]="PerfectPopup"
+            [resizeType]="'xylt'" [resizeControl]="resizeControl"></div>
+        <div class="left-bottom resize" *ngIf="!fullScreen &&  data.config.resizable" resize [element]="PerfectPopup"
+            [resizeType]="'xylb'" [resizeControl]="resizeControl"></div>
+        <div class="left-bottom resize" *ngIf="!fullScreen &&  data.config.resizable" resize [element]="PerfectPopup"
+            [resizeType]="'xylb'" [resizeControl]="resizeControl"></div>
+        <div class="touch-resize resize" *ngIf="!fullScreen &&  data.config.resizable && (dir|async) === 'ltr'" resize
+            [element]="PerfectPopup" [resizeType]="'xylbTouch'" [resizeControl]="resizeControl">
+            <svg xmlns:svg="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="0 0 10 10" version="1.1"
+                id="svg8">
+                <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(0,-287)">
+                    <g id="g68" transform="matrix(-0.02010761,0,0,0.02016103,9.930988,287.09516)">
+                        <g id="g12">
+                            <path id="path10"
+                                d="m 446.34,280.199 c 13.175,-1.265 25.398,-6.933 35.015,-16.295 v 166.979 c 0,28.88 -23.507,52.369 -52.387,52.369 H 53.646 c -28.889,0 -52.393,-23.489 -52.393,-52.369 V 55.96 C 1.253,27.083 24.757,3.588 53.646,3.588 H 221.08 c -9.014,9.247 -15.004,21.45 -16.319,35.009 H 53.64 c -9.582,0 -17.377,7.788 -17.377,17.363 v 374.917 c 0,9.569 7.796,17.359 17.377,17.359 h 375.322 c 9.581,0 17.378,-7.79 17.378,-17.359 z M 455.743,0 H 277.895 c -14.499,0 -26.256,11.754 -26.256,26.262 0,14.502 11.757,26.255 26.256,26.255 h 113.02 c -1.087,0.792 -2.175,1.599 -3.156,2.583 L 202.479,240.367 V 125.911 c 0,-14.502 -11.753,-26.256 -26.255,-26.256 -7.253,0 -13.819,2.929 -18.569,7.688 -4.752,4.761 -7.693,11.31 -7.693,18.568 v 177.854 c 0,14.5 11.754,26.256 26.256,26.256 h 177.849 c 14.505,0 26.256,-11.756 26.256,-26.268 0,-14.493 -11.751,-26.256 -26.256,-26.256 H 241.059 c 1.091,-0.791 2.172,-1.596 3.153,-2.576 L 429.477,89.648 V 204.11 c 0,14.502 11.75,26.256 26.255,26.256 7.253,0 13.819,-2.929 18.572,-7.684 4.752,-4.764 7.695,-11.319 7.695,-18.572 V 26.256 C 481.999,11.76 470.243,0 455.743,0 Z"
+                                inkscape:connector-curvature="0" />
+
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </div>
+        <div class="touch-resize-bl resize" *ngIf="!fullScreen &&  data.config.resizable && (dir|async) === 'rtl'"
+            resize [element]="PerfectPopup" [resizeType]="'xylblTouch'" [resizeControl]="resizeControl">
+            <svg xmlns:svg="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="0 0 10 10" version="1.1"
+                id="svg8">
+                <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(0,-287)">
+                    <g id="g68" transform="matrix(-0.02010761,0,0,0.02016103,9.930988,287.09516)">
+                        <g id="g12">
+                            <path id="path10"
+                                d="m 446.34,280.199 c 13.175,-1.265 25.398,-6.933 35.015,-16.295 v 166.979 c 0,28.88 -23.507,52.369 -52.387,52.369 H 53.646 c -28.889,0 -52.393,-23.489 -52.393,-52.369 V 55.96 C 1.253,27.083 24.757,3.588 53.646,3.588 H 221.08 c -9.014,9.247 -15.004,21.45 -16.319,35.009 H 53.64 c -9.582,0 -17.377,7.788 -17.377,17.363 v 374.917 c 0,9.569 7.796,17.359 17.377,17.359 h 375.322 c 9.581,0 17.378,-7.79 17.378,-17.359 z M 455.743,0 H 277.895 c -14.499,0 -26.256,11.754 -26.256,26.262 0,14.502 11.757,26.255 26.256,26.255 h 113.02 c -1.087,0.792 -2.175,1.599 -3.156,2.583 L 202.479,240.367 V 125.911 c 0,-14.502 -11.753,-26.256 -26.255,-26.256 -7.253,0 -13.819,2.929 -18.569,7.688 -4.752,4.761 -7.693,11.31 -7.693,18.568 v 177.854 c 0,14.5 11.754,26.256 26.256,26.256 h 177.849 c 14.505,0 26.256,-11.756 26.256,-26.268 0,-14.493 -11.751,-26.256 -26.256,-26.256 H 241.059 c 1.091,-0.791 2.172,-1.596 3.153,-2.576 L 429.477,89.648 V 204.11 c 0,14.502 11.75,26.256 26.255,26.256 7.253,0 13.819,-2.929 18.572,-7.684 4.752,-4.764 7.695,-11.319 7.695,-18.572 V 26.256 C 481.999,11.76 470.243,0 455.743,0 Z"
+                                inkscape:connector-curvature="0" />
+
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </div>
+
+    </div>
+</div>
