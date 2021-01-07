@@ -47,7 +47,7 @@ import { NgxPerfectPopupModule } from 'ngx-perfect-popup'
 ##### Use it in your components and load popup
 
 ```javascript
-import { NgxPerfectPopup,PopupModule } from 'ngx-perfect-popup'
+import { NgxPerfectPopup,PopupModel } from 'ngx-perfect-popup'
 import { TestPopupComponent } from './test-popup.component';
 
 @Component({
@@ -60,7 +60,7 @@ constructor(
   ) { }
 
 openPopup(){
-  const config:PopupModule={
+  const config:PopupModel={
       icon: './favicon.ico',//your icon path
       styleClass: "cum-popup", // your custom class style 
       theme: "primary", //defult theme
@@ -152,7 +152,7 @@ add style in that component you whant call open popup
         color: #333;
     }
 }
-const config:PopupModule={
+const config:PopupModel={
       styleClass: "cum-style",
       .
       .
