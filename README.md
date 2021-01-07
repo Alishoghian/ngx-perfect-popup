@@ -4,7 +4,7 @@
 
 This is an Angular wrapper library for the [ngx Perfect Popup](https://github.com/Alishoghian/ngx-perfect-popup/). To use this library you should get familiar with the Perfect Popup documentation as well since this documentation only explains details specific to this wrapper.
 
-This documentation is for the latest 0/0.1.x version which requires Angular 10.1.3 or newer. For Angular 10.1.3 you need to use the latest 10.1.3 version. Documentation for the 10.x.x can be found from <a href="https://github.com/Alishoghian/ngx-perfect-poup/tree/master">here</a>.
+This documentation is for the latest 0/0.2.x version which requires Angular 10.1.3 or newer. For Angular 10.1.3 you need to use the latest 10.1.3 version. Documentation for the 10.x.x can be found from <a href="https://github.com/Alishoghian/ngx-perfect-poup/tree/master">here</a>.
 
 
 ### Building the library
