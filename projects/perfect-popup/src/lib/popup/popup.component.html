@@ -5,7 +5,8 @@
         <div class="header" [dir]="dir" [ngStyle]="{'cursor': fullScreen || !data.config.dragable?'unset':'move'}" Move
             [element]="PerfectPopup" [fullScreen]="fullScreen" [dragable]="data.config.dragable">
             <div class="title">
-                <div class="logo" [ngStyle]="{'background-image': data.config?.icon ? 'url('+data.config?.icon+')':''}">
+                <div class="logo" *ngIf="data.config?.icon"
+                    [ngStyle]="{'background-image': data.config?.icon ? 'url('+data.config?.icon+')':''}">
                 </div>
                 <strong>{{data.config?.headerTitle ? data.config?.headerTitle : 'Sample Popup'}}</strong>
             </div>

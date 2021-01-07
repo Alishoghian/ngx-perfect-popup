@@ -1,6 +1,20 @@
 {
   "name": "ngx-perfect-popup",
-  "version": "0.2.1",
+  "version": "0.2.3",
+  "keywords": [
+    "popup",
+    "dialog",
+    "angular",
+    "angular 10",
+    "perfect popup",
+    "dragable popup",
+    "resizable popup",
+    "ngx modal"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Alishoghian/ngx-perfect-poup.git"
+  },
   "peerDependencies": {
     "@angular/common": "^10.1.6",
     "@angular/core": "^10.1.6"

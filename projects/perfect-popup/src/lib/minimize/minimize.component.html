@@ -1,6 +1,10 @@
 <div class="minimize-list" #mini [dir]="dir|async">
     <div class="list" *ngFor="let item of list|forKey">
-        <img [src]="list[item][0].icon" width="45px" height="45px" alt="" (click)="maximaze(item)">
+        <img *ngIf="list[item][0]?.icon" [src]="list[item][0].icon" width="45px" height="45px" alt=""
+            (click)="maximaze(item)">
+
+        <div *ngIf="!list[item][0]?.icon" (click)="maximaze(item)" class="default-icon">
+        </div>
         <div class="item" [ngStyle]="{'top': '-'+(30*list[item].length+4)+'px'}" *ngIf="checkArrayLength(item)">
             <div class="popup" *ngFor="let popup of list[item]">
                 <span (click)="maximazePopup(item,popup)">{{popup.title ? popup.title : 'sample Popup'}}</span>
