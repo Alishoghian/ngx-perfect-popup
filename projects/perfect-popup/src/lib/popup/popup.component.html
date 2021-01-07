@@ -2,8 +2,8 @@
     #PerfectPopup (mousedown)="$event.stopPropagation();changeZIndex(PerfectPopup)" [ngStyle]="{'width': data?.config?.width ? data?.config?.width+'px' : 'fit-contnet',
                 'height': data?.config?.height ? data?.config?.height+'px' : 'fit-contnet'}">
     <div class="popup-body" dir="ltr" #body>
-        <div class="header" [dir]="dir|async" [ngStyle]="{'cursor': fullScreen || !data.config.dragable?'unset':'move'}"
-            Move [element]="PerfectPopup" [fullScreen]="fullScreen" [dragable]="data.config.dragable">
+        <div class="header" [dir]="dir" [ngStyle]="{'cursor': fullScreen || !data.config.dragable?'unset':'move'}" Move
+            [element]="PerfectPopup" [fullScreen]="fullScreen" [dragable]="data.config.dragable">
             <div class="title">
                 <div class="logo" [ngStyle]="{'background-image': data.config?.icon ? 'url('+data.config?.icon+')':''}">
                 </div>
@@ -102,7 +102,7 @@
                     </svg></button>
             </div>
         </div>
-        <div class="content" [dir]="dir|async">
+        <div class="content" [dir]="dir">
             <ng-template loadComp [comp]="data.component" [data]="{data:data.config.data,id:data.id}"></ng-template>
         </div>
         <div class="right resize" *ngIf="!fullScreen && data.config.resizable" resize [element]="PerfectPopup"
@@ -124,7 +124,7 @@
             [resizeType]="'xylb'" [resizeControl]="resizeControl"></div>
         <div class="left-bottom resize" *ngIf="!fullScreen &&  data.config.resizable" resize [element]="PerfectPopup"
             [resizeType]="'xylb'" [resizeControl]="resizeControl"></div>
-        <div class="touch-resize resize" *ngIf="!fullScreen &&  data.config.resizable && (dir|async) === 'ltr'" resize
+        <div class="touch-resize resize" *ngIf="!fullScreen &&  data.config.resizable && (dir) === 'ltr'" resize
             [element]="PerfectPopup" [resizeType]="'xylbTouch'" [resizeControl]="resizeControl">
             <svg xmlns:svg="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="0 0 10 10" version="1.1"
                 id="svg8">
@@ -140,8 +140,8 @@
                 </g>
             </svg>
         </div>
-        <div class="touch-resize-bl resize" *ngIf="!fullScreen &&  data.config.resizable && (dir|async) === 'rtl'"
-            resize [element]="PerfectPopup" [resizeType]="'xylblTouch'" [resizeControl]="resizeControl">
+        <div class="touch-resize-bl resize" *ngIf="!fullScreen &&  data.config.resizable && (dir) === 'rtl'" resize
+            [element]="PerfectPopup" [resizeType]="'xylblTouch'" [resizeControl]="resizeControl">
             <svg xmlns:svg="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="0 0 10 10" version="1.1"
                 id="svg8">
                 <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(0,-287)">

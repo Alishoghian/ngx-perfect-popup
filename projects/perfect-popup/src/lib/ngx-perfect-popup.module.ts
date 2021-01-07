@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PopupComponent } from './popup/popup.component';
-import { Popup } from './popup';
+import { NgxPerfectPopup } from './ngx-perfect-popup';
 import { MinimizeComponent } from './minimize/minimize.component';
 import { ForKeyPipe } from './pipe/for-key.pipe';
 import { LoadComponentDirective } from './directive/load-component.directive';
@@ -22,7 +22,7 @@ import { ResizeingDirective } from './directive/resizeing.directive';
   imports: [
     CommonModule
   ],
-  providers: [Popup],
+  providers: [NgxPerfectPopup],
 
 })
-export class PerfectPopupModule { }
+export class NgxPerfectPopupModule { }

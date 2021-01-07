@@ -1,5 +1,5 @@
 import { Directive, HostListener, Input } from '@angular/core';
-import { Popup } from '../popup';
+import { NgxPerfectPopup } from '../ngx-perfect-popup';
 
 @Directive({
   selector: '[resize]'
@@ -13,7 +13,7 @@ export class ResizeingDirective {
   resizeArea: { width: number, height: number } = { width: 0, height: 0 }
   canResize: boolean = false
   elLastArea: { width: number, height: number } = { width: 0, height: 0 }
-  constructor(private popup: Popup) { }
+  constructor(private popup: NgxPerfectPopup) { }
   @HostListener('touchstart', ['$event'])
   @HostListener('mousedown', ['$event'])
   mouseDown(event) {

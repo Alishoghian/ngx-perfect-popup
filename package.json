@@ -1,6 +1,19 @@
 {
-  "name": "perfect-popup",
+  "name": "ngx-perfect-popup",
   "version": "0.0.0",
+  "keywords": [
+    "popup",
+    "dialog",
+    "angular",
+    "angular 10",
+    "perfect popup",
+    "dragable popup",
+    "resizable popup"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Alishoghian/ngx-perfect-poup.git"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

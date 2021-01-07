@@ -6,7 +6,7 @@ import { PopupComponent } from "./popup/popup.component";
 
 @Injectable()
 
-export class Popup {
+export class NgxPerfectPopup {
     private dir: BehaviorSubject<string> = new BehaviorSubject<string>('ltr')
     private ClosingCallBack = new Subject<string>()
     private changeEmite = new Subject<{ width: number, height: number, x: number, y: number, id: string }>()

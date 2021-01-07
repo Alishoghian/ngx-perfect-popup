@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
-import { Popup } from '../popup';
+import { NgxPerfectPopup } from '../ngx-perfect-popup';
 
 @Component({
   selector: 'app-minimize',
@@ -14,7 +14,7 @@ export class MinimizeComponent implements OnInit, OnDestroy, AfterViewInit {
   sub: Subscription = new Subscription();
   @ViewChild('mini') minimize: ElementRef
   constructor(
-    private pop: Popup
+    private pop: NgxPerfectPopup
   ) { }
   ngAfterViewInit() {
     this.minimize.nativeElement.style.zIndex = (99992 + this.pop.popupList.length).toString()

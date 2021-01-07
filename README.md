@@ -1,6 +1,8 @@
+
+
 # ngx Perfect Popup
 
-This is an Angular wrapper library for the [Perfect Popup](https://github.com/Alishoghian/ngx-perfect-poup/). To use this library you should get familiar with the Perfect Popup documentation as well since this documentation only explains details specific to this wrapper.
+This is an Angular wrapper library for the [ngx Perfect Popup](https://github.com/Alishoghian/ngx-perfect-popup/). To use this library you should get familiar with the Perfect Popup documentation as well since this documentation only explains details specific to this wrapper.
 
 This documentation is for the latest 0/0.1.x version which requires Angular 10.1.3 or newer. For Angular 10.1.3 you need to use the latest 10.1.3 version. Documentation for the 10.x.x can be found from <a href="https://github.com/Alishoghian/ngx-perfect-poup/tree/master">here</a>.
 
@@ -27,17 +29,17 @@ npm install ngx-perfect-popup --save
 
 ##### Load the module for your app :
 
-First you need to add the PerfectPopupModule  module in your module.
+First you need to add the NgxPerfectPopupModule  module in your module.
 
 ```javascript
-import { PerfectPopupModule} from 'ngx-perfect-popup'
+import { NgxPerfectPopupModule } from 'ngx-perfect-popup'
 
 
 @NgModule({
   ...
   imports: [
     ...
-    PerfectPopupModule
+    NgxPerfectPopupModule
   ],
 })
 
@@ -45,7 +47,7 @@ import { PerfectPopupModule} from 'ngx-perfect-popup'
 ##### Use it in your components and load popup
 
 ```javascript
-import { Popup,PopupModel } from 'ngx-perfect-popup'
+import { NgxPerfectPopup,PopupModule } from 'ngx-perfect-popup'
 import { TestPopupComponent } from './test-popup.component';
 
 @Component({
@@ -54,11 +56,11 @@ import { TestPopupComponent } from './test-popup.component';
 export class AppComponent {
 
 constructor(
-    private popup: Popup
+    private popup: NgxPerfectPopup
   ) { }
 
 openPopup(){
-  const config:PopupModel={
+  const config:PopupModule={
       icon: './favicon.ico',//your icon path
       styleClass: "cum-popup", // your custom class style 
       theme: "primary", //defult theme
@@ -90,13 +92,13 @@ openPopup(){
 
 ```javascript
 
-import { Popup } from 'ngx-perfect-popup'
+import { NgxPerfectPopup } from 'ngx-perfect-popup'
 
 export class TestPopupComponent implements OnInit, OnDestroy {
       sub: Subscription = new Subscription()
 
   constructor(@Inject("data") public data: any,
-    private popup: Popup) { }
+    private popup: NgxPerfectPopup) { }
     ngOnInit(): void {
         this.sub.add(this.popup.getCloseing().subscribe(data => {
             console.log(data);
@@ -108,10 +110,26 @@ export class TestPopupComponent implements OnInit, OnDestroy {
             }))
     }
 ```
+##### change popup direction :
+```javascript 
+import { NgxPerfectPopup } from 'ngx-perfect-popup'
+  constructor( private popup: NgxPerfectPopup) { }
+  changeDir(){
+    let dir: "ltr" | "rtl" =  'ltr'
+    this.popup.changeDir(this.dir)
+  }
+```
+##### resize and drag event subject :
+```javascript 
+ this.popup.getChange().subscribe(res =>    
+        console.log(res);
+        
+    })
+```
 ##### add your custom style whit styleClass :
 add style in that component you whant call open popup 
 ```javascript
-::ng-deep.cum-popup-style{
+::ng-deep.cum-style{
         border-radius: 8px;
         overflow: hidden;
     .header{
@@ -134,8 +152,8 @@ add style in that component you whant call open popup
         color: #333;
     }
 }
-const config:PopupModel={
-      styleClass: "cum-popup-style",
+const config:PopupModule={
+      styleClass: "cum-style",
       .
       .
       .
@@ -143,7 +161,8 @@ const config:PopupModel={
 
 ```
 or you can set globaly style in style.scss 
-.cum-popup-style{
+```javascript
+.cum-style{
         border-radius: 8px;
         overflow: hidden;
     .header{
@@ -166,4 +185,4 @@ or you can set globaly style in style.scss
         color: #333;
     }
 }
-
+```

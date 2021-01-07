@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, Inject, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Popup } from '../popup';
+import { Observable, Subscription } from 'rxjs';
+import { NgxPerfectPopup } from '../ngx-perfect-popup';
 
 @Component({
   selector: 'app-popup',
@@ -11,18 +11,24 @@ export class PopupComponent implements OnInit, OnDestroy, AfterViewInit {
   data
   fullScreen: boolean = false
   elChangeSize: { width: string, height: string, left: string, top: string } = { width: null, height: null, left: null, top: null }
-  dir: Observable<string>
+  dir: string
+  sub: Subscription = new Subscription()
   resizeControl: { maxWidth: number, maxHeight: number, minWidth: number, minHeight: number } = { maxWidth: undefined, maxHeight: undefined, minWidth: 20, minHeight: 20 }
   @ViewChild('PerfectPopup', { static: true }) PerfectPopup: ElementRef
   constructor(@Inject("comp") private compInject: any,
-    private poppup: Popup
+    private poppup: NgxPerfectPopup
   ) {
     this.data = compInject
 
   }
   ngOnInit(): void {
 
-    this.dir = this.poppup.getDir()
+
+
+    this.sub.add(this.poppup.getDir().subscribe(dir => {
+      this.dir = dir
+    }))
+    this.dir = this.data.config?.dir ? this.data.config?.dir : "ltr"
     this.resizeControl = {
       maxWidth: this.data.config.maxWidth,
       maxHeight: this.data.config.maxHeight,
@@ -32,7 +38,8 @@ export class PopupComponent implements OnInit, OnDestroy, AfterViewInit {
 
   }
   ngOnDestroy() {
-
+    if (this.sub)
+      this.sub.unsubscribe()
   }
   ngAfterViewInit() {
     this.setStyle()

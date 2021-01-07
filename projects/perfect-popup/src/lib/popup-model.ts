@@ -19,4 +19,5 @@ export interface PopupModel {
     icon?: string;
     width?: number;
     height?: number;
+    dir?: "ltr" | "rtl"
 }

@@ -1,5 +1,5 @@
 import { Directive, HostListener, Input } from '@angular/core';
-import { Popup } from '../popup';
+import { NgxPerfectPopup } from '../ngx-perfect-popup';
 
 @Directive({
   selector: '[Move]'
@@ -16,7 +16,7 @@ export class MoveDirective {
   @Input() dragable: boolean
   @Input() fullScreen: boolean = false
   zIndex = ''
-  constructor(private popup: Popup) { }
+  constructor(private popup: NgxPerfectPopup) { }
   @HostListener('touchstart', ['$event'])
   @HostListener('mousedown', ['$event'])
   onMouseDown(event) {
